@@ -1,0 +1,41 @@
+h2{
+    text-align: center;
+    color: green;
+    font-size: 40px;
+}
+p{
+        font-size: 40px;
+        color: black;
+        text-align: center;
+ }
+  .class2{
+
+    color: aqua;
+    font-style: normal;
+ }
+ *{
+    background-color: bisque;
+    font-style: italic;
+    color: brown;
+    text-decoration: underline;
+ }
+ #para{
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: blue;
+    font-style: normal;
+ }
+  .class3{
+    color: green;
+ }
+ div.test{
+ 
+    color: orange;
+    font-size: 20px;
+}
+ 
+div p{
+ 
+    color:chartreuse;
+    font-size: 15px;
+}

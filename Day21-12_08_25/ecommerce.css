@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: bisque;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: grey;
+  color: #000;
+  text-align: center;
+  font-size: 14px;
+  padding: 8px 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.main-content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; /* centers the layout nicely */
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.left-side {
+  width: 100%;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product {
+  flex: 1 1 calc(20% - 20px); /* 5 products per row */
+  min-width: 180px; /* prevents items from being too small */
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.product img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.product h3 {
+  font-size: 18px;
+  margin: 10px 0 5px 0;
+  color: #333;
+}
+
+.product p {
+  font-size: 16px;
+  color: #777;
+  margin: 0 0 10px 0;
+}
+
+.product button {
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: #d4af37;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.product button:hover {
+  background-color: #b9962b;
+}
+
+.right-side {
+  width: 200px;
+  border-left: 1px solid #ccc;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.categories h3,
+.offer-tab h3 {
+  font-size: 20px;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+.nav-bar {
+  background-color: #333;
+  padding: 10px 0;
+  text-align: center;
+}
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.categories ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.categories ul li {
+  font-size: 16px;
+  padding: 6px 0;
+  color: #555;
+  cursor: pointer;
+}
+
+.offer-tab p {
+  font-size: 15px;
+  color: #444;
+  background-color: #fffbe6;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #f1e5a2;
+}
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
