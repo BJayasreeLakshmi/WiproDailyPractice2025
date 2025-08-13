@@ -22,7 +22,7 @@ body {
 .main-content {
   display: flex;
   width: 100%;
-  max-width: 1200px; /* centers the layout nicely */
+  max-width: 1200px; 
   margin: 0 auto;
   border: 1px solid #ccc;
   padding: 10px;
@@ -42,8 +42,8 @@ body {
 }
 
 .product {
-  flex: 1 1 calc(20% - 20px); /* 5 products per row */
-  min-width: 180px; /* prevents items from being too small */
+  flex: 1 1 calc(20% - 20px);
+  min-width: 180px; 
   border: 1px solid #ddd;
   padding: 10px;
   box-sizing: border-box;
