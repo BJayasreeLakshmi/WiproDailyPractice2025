@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="ex18.css" rel="stylesheet">
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+
+  <!-- Number inputs -->
+  <div class="row">
+    <label>First number</label>
+    <input id="num1" type="number" placeholder="Enter first number" />
+  </div>
+
+  <div class="row">
+    <label>Second number</label>
+    <input id="num2" type="number" placeholder="Enter second number" />
+  </div>
+
+  <!-- Operation buttons -->
+  <div class="row">
+    <button id="addBtn">Add</button>
+    <button id="subBtn">Subtract</button>
+    <button id="mulBtn">Multiply</button>
+    <button id="divBtn">Divide</button>
+  </div>
+
+  <!-- Result display -->
+  <div id="result" class="row">Result: <span id="out">—</span></div>
+  <div id="msg" class="row error"></div>
+    
+</body>
+<script src="ex18.js"></script>
+</html>
