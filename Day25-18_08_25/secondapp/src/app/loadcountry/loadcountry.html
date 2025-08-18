@@ -1,0 +1,9 @@
+<br />
+<button (click)="loadCountries()">Load</button>
+
+<select>
+    <option value="">select country</option>
+    @for(country of countries; track $index){
+        <option>{{country}}</option>
+    }
+</select>

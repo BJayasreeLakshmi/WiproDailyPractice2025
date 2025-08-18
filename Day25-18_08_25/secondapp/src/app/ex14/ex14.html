@@ -1,0 +1,10 @@
+<p>Ex14!</p>
+
+<input type="text" [(ngModel)]="searchText" placeholder="Type to search..." />
+
+<br /><br />
+
+  @for (name of searchStr; track $index) {
+    <option>{{ name }}</option>
+  }
+
