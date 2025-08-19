@@ -1,0 +1,28 @@
+
+/* ex1 */
+/* .home-container {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.home-container h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+} */
+
+
+.fruit-container {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  gap: 16px; 
+}
+
+.fruit-card {
+  background-color: #f7f7f7;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+

@@ -1,0 +1,18 @@
+<p>csscomp works!</p>
+<h2>Ex2: ngClass Examples</h2>
+
+
+<div [ngClass]="'app1'">
+  String binding → only class "app1"
+</div>
+
+
+<div [ngClass]="['app1', 'app2']">
+  Array binding → classes "app1 app2"
+</div>
+
+
+<div [ngClass]="{'app1': flag1, 'app2': flag2}">
+  Object binding → app1 applies if flag1=true, app2 applies if flag2=true
+</div>
+

@@ -1,0 +1,6 @@
+<div class="fruit-card">
+  <img [src]="fruit.image" [alt]="fruit.name">
+  <h3>{{ fruit.name }}</h3>
+  <p>{{ fruit.description }}</p>
+  <button (click)="removeFruit()">Remove</button>
+</div>

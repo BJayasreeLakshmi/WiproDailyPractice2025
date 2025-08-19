@@ -1,0 +1,31 @@
+
+<!--ex1-->
+<!--<div class="container mt-4">
+  <app-displaylist></app-displaylist>
+</div>-->
+
+
+<!--ex5
+
+<h2>Fruit List</h2>
+
+
+<div class="fruit-container">
+  <app-fruitcomp *ngFor="let fruit of fruits" [fruit]="fruit"></app-fruitcomp>
+</div>-->
+
+<!--Ex7-->
+<h2>Fruit List</h2>
+
+<div class="fruit-container">
+  <app-fruitcomp 
+    *ngFor="let fruit of fruits" 
+    [fruit]="fruit" 
+    (btnClick)="remove($event)">
+  </app-fruitcomp>
+</div>
+
+
+
+
+

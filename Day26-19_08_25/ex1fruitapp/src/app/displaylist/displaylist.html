@@ -1,0 +1,9 @@
+<div class="grid-container">
+  @for (fruit of fruits; track fruit.name) {
+    <div class="grid-item">
+      <img [src]="fruit.image" [alt]="fruit.name">
+      <div class="caption">{{ fruit.name }}</div>
+    </div>
+  }
+</div>
+

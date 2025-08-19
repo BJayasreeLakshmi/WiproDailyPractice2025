@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>{{ task.description }}</td>
+      <td>{{ task.category }}</td>
+      <td>
+        <button (click)="onDelete(task.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
