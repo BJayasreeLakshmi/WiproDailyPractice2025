@@ -1,0 +1,39 @@
+{
+  "vehicles": [
+    {
+      "id": "1",
+      "make": "Maruthi",
+      "fuelType": "Petrol",
+      "model": "Corolla",
+      "price": 2500
+    },
+    {
+      "id": "2",
+      "make": "Teslaa",
+      "fuelType": "Electric",
+      "model": "Model 3 Long Range",
+      "price": 420
+    },
+    {
+      "id": "3",
+      "make": "Hyundai",
+      "fuelType": "Diesel",
+      "model": "Creta",
+      "price": 20000
+    },
+    {
+      "id": "4",
+      "make": "Tesla",
+      "fuelType": "Electric",
+      "model": "Model 3 Long Range",
+      "price": 42000
+    },
+    {
+      "id": 0,
+      "make": "maruthi",
+      "model": "corolla",
+      "fuelType": "petrol",
+      "price": 3000
+    }
+  ]
+}

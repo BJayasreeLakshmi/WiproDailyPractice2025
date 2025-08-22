@@ -1,0 +1,31 @@
+<div>
+  <h2>Movie CRUD</h2>
+
+  <input type="text" [(ngModel)]="movie.movieName" placeholder="Movie Name">
+  <input type="text" [(ngModel)]="movie.language" placeholder="Language">
+  <input type="number" [(ngModel)]="movie.imdbRating" placeholder="IMDB Rating">
+  <button (click)="saveMovie()">{{ isEdit ? 'Update' : 'Add' }} Movie</button>
+
+  <hr>
+
+  <table border="1" width="100%">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Language</th>
+      <th>IMDB Rating</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let m of movies">
+      <td>{{ m.movieId }}</td>
+      <td>{{ m.movieName }}</td>
+      <td>{{ m.language }}</td>
+      <td>{{ m.imdbRating }}</td>
+      <td>
+        <button (click)="editMovie(m)">Edit</button>
+        <button (click)="deleteMovie(m.movieId)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
+

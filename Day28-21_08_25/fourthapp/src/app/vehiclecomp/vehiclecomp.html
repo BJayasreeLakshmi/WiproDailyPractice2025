@@ -1,0 +1,42 @@
+<!--<h2>Vehicle List</h2>
+<ul>
+  @for (v of vehicles; track v.id) {
+    <li>
+      {{ v.id }} - {{ v.make }} {{ v.model }} ({{ v.fuelType }}) - ${{ v.price }} 
+    </li>
+  }
+</ul>-->
+
+<h2>Vehicle List</h2>
+<ul>
+  @for (v of vehicles; track v.id) {
+    <li>
+      {{ v.id }} - {{ v.make }} {{ v.model }} ({{ v.fuelType }}) - ${{ v.price }}
+      <button (click)="edit(v.id)">Edit</button>
+      <button (click)="delete(v.id)">Delete</button>
+    </li>
+  }
+</ul>
+
+<hr>
+
+<h3>Edit Vehicle</h3>
+<div>
+  Make: <input type="text" [(ngModel)]="vehicleEdit.make" />
+  Model: <input type="text" [(ngModel)]="vehicleEdit.model" />
+  Fuel: <input type="text" [(ngModel)]="vehicleEdit.fuelType" />
+  Price: <input type="number" [(ngModel)]="vehicleEdit.price" />
+  <button (click)="update()">Update</button>
+</div>
+
+<hr>
+
+<h3>Add Vehicle</h3>
+<div>
+  Make: <input type="text" [(ngModel)]="vehicleAdd.make" />
+  Model: <input type="text" [(ngModel)]="vehicleAdd.model" />
+  Fuel: <input type="text" [(ngModel)]="vehicleAdd.fuelType" />
+  Price: <input type="number" [(ngModel)]="vehicleAdd.price" />
+  <button (click)="save()">Save</button>
+</div>
+
