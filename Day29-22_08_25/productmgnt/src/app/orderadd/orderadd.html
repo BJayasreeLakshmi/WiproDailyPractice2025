@@ -1,0 +1,21 @@
+<div class="order-form">
+  <h2>Place Order</h2>
+
+  <label for="product">Select Product:</label>
+  <select id="product" [(ngModel)]="selectedProductId" name="product">
+    <option value="">--Choose--</option>
+    @for (p of products; track p.id) {
+      <option [value]="p.id">{{ p.name }} (Available: {{ p.qty }})</option>
+    }
+  </select>
+
+  <label for="qtyPurchased">Quantity:</label>
+  <input id="qtyPurchased" type="number" name="qtyPurchased" [(ngModel)]="qtyPurchased">
+
+  <button (click)="placeOrder()">Place Order</button>
+
+  @if (errorMessage) {
+    <div class="error">{{ errorMessage }}</div>
+  }
+</div>
+

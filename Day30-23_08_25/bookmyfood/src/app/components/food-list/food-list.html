@@ -1,0 +1,29 @@
+<!--<div>
+  <h2>Available Foods</h2>
+  <ul>
+    <li *ngFor="let food of foods">
+      {{ food.name }} - {{ food.category }} - ₹{{ food.price }}
+    </li>
+  </ul>
+</div>-->
+
+<!--<div class="food-container">
+  <div class="food-card" *ngFor="let food of foods">
+    <h3>{{ food.name }}</h3>
+    <p>Category: {{ food.category }}</p>
+    <p>Price: ₹{{ food.price }}</p>
+  </div>
+</div>-->
+
+<div class="food-container">
+  <div class="food-card" *ngFor="let food of foods">
+    <img [src]="food.imageUrl" alt="{{ food.name }}" class="food-image" />
+    <div class="food-info">
+      <h3>{{ food.name }}</h3>
+      <p class="category">{{ food.category }}</p>
+      <p class="price">₹{{ food.price }}</p>
+    </div>
+  </div>
+</div>
+
+
