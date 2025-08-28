@@ -1,0 +1,9 @@
+<main class="container">
+  <h1>{{ title }}</h1>
+
+  <mat-list role="list" aria-label="List of cities">
+    <mat-list-item role="listitem" *ngFor="let city of cities">
+      {{ city }}
+    </mat-list-item>
+  </mat-list>
+</main>

@@ -1,0 +1,40 @@
+<h1>{{ title }}</h1>
+
+<mat-vertical-stepper [linear]="true" #stepper>
+
+  <!-- Step 1: Name -->
+  <mat-step [stepControl]="formGroup.get('name')!">
+    <form [formGroup]="formGroup">
+      <ng-template matStepLabel>Enter Name</ng-template>
+      <label>Name: <input formControlName="name" /></label>
+      <div>
+        <button type="button" matStepperNext [disabled]="!formGroup.get('name')?.valid">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- Step 2: Age -->
+  <mat-step [stepControl]="formGroup.get('age')!">
+    <form [formGroup]="formGroup">
+      <ng-template matStepLabel>Enter Age</ng-template>
+      <label>Age: <input type="number" formControlName="age" /></label>
+      <div>
+        <button type="button" matStepperPrevious>Back</button>
+        <button type="button" matStepperNext [disabled]="!formGroup.get('age')?.valid">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- Step 3: Email -->
+  <mat-step [stepControl]="formGroup.get('email')!">
+    <form [formGroup]="formGroup">
+      <ng-template matStepLabel>Enter Email</ng-template>
+      <label>Email: <input type="email" formControlName="email" /></label>
+      <div>
+        <button type="button" matStepperPrevious>Back</button>
+        <button type="button" (click)="stepper.reset()">Finish</button>
+      </div>
+    </form>
+  </mat-step>
+
+</mat-vertical-stepper>

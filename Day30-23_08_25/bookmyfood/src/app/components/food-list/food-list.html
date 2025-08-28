@@ -1,4 +1,54 @@
-<!--<div>
+
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-sm-6 mb-3" *ngFor="let food of foodList; trackBy: trackByFoodId">
+    <div class="card" style="width: 18rem;">
+      <img [src]="food.imageUrl" class="card-img-top" alt="{{ food.name }}">
+      <div class="card-body">
+        {{ food.id }}
+        <h5 class="card-title">{{ food.name }}</h5>
+        <p>{{ food.name }} - {{ food.category }} - ₹{{ food.price }}</p>
+        <p>
+          Quantity:
+          <input type="number" min="1" max="5" [(ngModel)]="quantity" (change)="changeQuantity(food.id!)" />
+        </p>
+        <a class="btn btn-primary" (click)="save(food.id!)">Order</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--<div class="food-container">
+  <div class="food-card" *ngFor="let food of foods">
+    <img [src]="food.imageUrl" alt="{{ food.name }}" class="food-image" />
+    <div class="food-info">
+      <h3>{{ food.name }}</h3>
+      <p class="category">{{ food.category }}</p>
+      <p class="price">₹{{ food.price }}</p>
+      <button class="order-btn" (click)="placeOrder(food)">Order Now</button>
+    </div>
+  </div>
+</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div>1
   <h2>Available Foods</h2>
   <ul>
     <li *ngFor="let food of foods">
@@ -7,7 +57,7 @@
   </ul>
 </div>-->
 
-<!--<div class="food-container">
+<!--<div class="food-container">--2
   <div class="food-card" *ngFor="let food of foods">
     <h3>{{ food.name }}</h3>
     <p>Category: {{ food.category }}</p>
@@ -15,6 +65,7 @@
   </div>
 </div>-->
 
+<!--3 before order
 <div class="food-container">
   <div class="food-card" *ngFor="let food of foods">
     <img [src]="food.imageUrl" alt="{{ food.name }}" class="food-image" />
@@ -22,8 +73,11 @@
       <h3>{{ food.name }}</h3>
       <p class="category">{{ food.category }}</p>
       <p class="price">₹{{ food.price }}</p>
+      <button class="order-btn">Order Now</button>
     </div>
   </div>
-</div>
+</div>-->
+
+
 
 

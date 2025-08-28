@@ -1,0 +1,60 @@
+<form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" formControlName="name" />
+  </mat-form-field>
+
+  @if ((regForm.controls['name'].invalid) && (regForm.controls['name'].touched || regForm.controls['name'].dirty)) {
+    @if (regForm.controls['name'].errors?.['required']) {
+      <span style="color:red">Name is Required</span>
+    }
+  }
+
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" />
+  </mat-form-field>
+
+  @if ((regForm.controls['email'].invalid) && (regForm.controls['email'].touched || regForm.controls['email'].dirty)) {
+    @if (regForm.controls['email'].errors?.['required']) {
+      <span style="color:red">Email is Required</span>
+    }
+    @if (regForm.controls['email'].errors?.['email']) {
+      <span style="color:red">Email format is invalid</span>
+    }
+  }
+
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Date of Birth</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dob" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  @if ((regForm.controls['dob'].invalid) && (regForm.controls['dob'].touched || regForm.controls['dob'].dirty)) {
+    <span style="color:red">Date of Birth is Required</span>
+  }
+
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Subject of Study</mat-label>
+    <mat-select formControlName="subject">
+      <mat-option *ngFor="let subj of subjects" [value]="subj">
+        {{ subj }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  @if ((regForm.controls['subject'].invalid) && (regForm.controls['subject'].touched || regForm.controls['subject'].dirty)) {
+    <span style="color:red">Subject is Required</span>
+  }
+
+  <div>
+    <button mat-raised-button color="primary" type="submit" [disabled]="regForm.invalid">
+      Save
+    </button>
+    
+  </div>
+
+</form>
+

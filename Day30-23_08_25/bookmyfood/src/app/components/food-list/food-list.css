@@ -1,4 +1,140 @@
-/* .food-container {
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px; /* optional gap between cards */
+}
+
+.card {
+  flex-basis: calc(33.33% - 10px); /* 3 cards per row with gap */
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+
+
+/* Container for all food cards 
+.food-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background: #f9f9f9;
+  justify-items: center;
+}
+
+/* Each card 
+.food-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 250px;
+  text-align: center;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Food image 
+.food-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+/* Info section 
+.food-info {
+  padding: 15px;
+}
+
+.food-info h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.food-info .category {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.food-info .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4e54c8;
+  margin-bottom: 12px;
+}
+
+/* Order button 
+.order-btn {
+  padding: 10px 18px;
+  background: #4e54c8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.order-btn:hover {
+  background: #3b41b0;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* /* .food-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -32,8 +168,9 @@
   margin: 5px 0;
   color: #555;
   font-size: 14px;
-} */
- .food-container {
+} ----------------*/
+ 
+ /* .food-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
@@ -79,4 +216,23 @@
   font-weight: bold;
   color: #e67e22;
 }
+/* ----button ---
+.order-btn {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
 
+.order-btn:hover {
+  background-color: #cf711f;
+}*/
+
+
+
+ 

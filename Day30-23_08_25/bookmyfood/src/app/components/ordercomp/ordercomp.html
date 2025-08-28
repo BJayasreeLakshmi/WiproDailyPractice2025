@@ -1,0 +1,16 @@
+<h2>Place an Order</h2>
+<form (ngSubmit)="placeOrder()" #orderForm="ngForm">
+
+  <label for="foodId">Food ID:</label>
+  <input type="number" id="foodId" required [(ngModel)]="order.foodId" name="foodId" min="1" />
+
+  <label for="quantity">Quantity:</label>
+  <input type="number" id="quantity" required [(ngModel)]="order.quantity" name="quantity" min="1" />
+
+  <button type="submit" [disabled]="!orderForm.form.valid">Place Order</button>
+
+</form>
+
+<p *ngIf="successMsg" style="color: green">{{ successMsg }}</p>
+<p *ngIf="error" style="color: red">{{ error }}</p>
+
