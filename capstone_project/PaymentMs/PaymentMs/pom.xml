@@ -8,11 +8,10 @@
     <version>3.1.4</version> <!-- valid Spring Boot version -->
     <relativePath/> <!-- lookup parent from repository -->
 </parent>
-
-	<groupId>com.wipro</groupId>
-	<artifactId>BookingMs</artifactId>
+	<groupId>com.wipro.FlightApp</groupId>
+	<artifactId>PaymentMs</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BookingMs</name>
+	<name>PaymentMs</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -29,12 +28,22 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		 <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
 	</properties>
+	
+	
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+		
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -48,18 +57,19 @@
         <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
     </dependency>
 
-			<dependency>
-    <groupId>io.github.resilience4j</groupId>
-    <artifactId>resilience4j-spring-boot3</artifactId>
-    <version>2.0.2</version>
-</dependency>
-
 		
+		
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -67,15 +77,6 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
-		</dependency>
-		
-		<dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-jpa</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.springframework.kafka</groupId>
       <artifactId>spring-kafka-test</artifactId>
       <scope>test</scope>
@@ -86,12 +87,13 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
 	<dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-dependencies</artifactId>
-            <version>2022.0.5</version> 
+            <version>2022.0.5</version> <!-- use compatible version with your Spring Boot -->
             <type>pom</type>
             <scope>import</scope>
         </dependency>

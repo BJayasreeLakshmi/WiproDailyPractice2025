@@ -1,0 +1,71 @@
+<div class="container mt-4">
+  <h2>Available Flights</h2>
+
+  
+  <div class="mb-3">
+    <strong>From:</strong> {{source}} |
+    <strong>To:</strong> {{destination}} |
+    <strong>Date:</strong> {{departureDate}}
+  </div>
+
+  
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="Search by Airline or Flight Number"
+             [(ngModel)]="searchText">
+    </div>
+    <div class="col-md-3">
+      <select class="form-select" [(ngModel)]="selectedClass">
+        <option value="">All Classes</option>
+        <option value="Economy">Economy</option>
+        <option value="Business">Business</option>
+        <option value="First">First</option>
+      </select>
+    </div>
+  </div>
+
+ 
+  <ng-container *ngFor="let flight of flights">
+    <div *ngIf="matchesSearch(flight) && matchesClass(flight)" class="card mb-3 p-3 shadow-sm">
+      <div class="row align-items-center">
+
+        
+        <div class="col-md-2 text-center">
+          <img [src]="flight.imageUrl || 'assets/default-logo.png'" alt="Logo" class="img-fluid mb-2" style="max-height:50px;">
+          <div><strong>{{ flight.flightNumber }}</strong></div>
+        </div>
+
+        
+        <div class="col-md-2 text-center">
+          <div class="fw-bold">{{ flight.startTime }}</div>
+          <div>{{ flight.source }}</div>
+        </div>
+
+        
+        <div class="col-md-2 text-center">
+          <div>{{ calculateDuration(flight.startTime, flight.endTime) }}</div>
+          <div *ngIf="flight.stops === 0"><strong>Nonstop</strong></div>
+          <div *ngIf="flight.stops === 1"><strong>Direct flight</strong></div>
+        </div>
+
+        
+        <div class="col-md-2 text-center">
+          <div class="fw-bold">{{ flight.endTime }}</div>
+          <div>{{ flight.destination }}</div>
+        </div>
+
+        
+        <div class="col-md-2 text-center ">
+          <div class="fw-bold" >₹{{ flight.price }}</div>
+          <div>per adult</div>
+        </div>
+
+        
+        <div class="col-md-2 text-center">
+          <button class="btn btn-primary" (click)="bookFlight(flight)">Book</button>
+        </div>
+
+      </div>
+    </div>
+  </ng-container>
+</div>

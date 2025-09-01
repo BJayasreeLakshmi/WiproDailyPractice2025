@@ -1,0 +1,78 @@
+<div class="card-container">
+<div class="payment-wrapper">
+
+  
+  <div class="left-panel">
+    <div *ngFor="let method of paymentMethods"
+         (click)="method.clickable ? selectMethod(method.name) : null"
+         [class.selected]="method.name === selectedMethod && method.clickable"
+         [class.disabled]="!method.clickable"
+         class="tab-item">
+      {{ method.name }}
+      <span *ngIf="method.name === 'UPI' || method.name === 'Bharat QR'" class="info-icon">i</span>
+    </div>
+  </div>
+
+  
+  <div class="right-panel" *ngIf="selectedMethod==='Credit Card' || selectedMethod==='Debit Card'">
+
+    
+    <div class="flight-summary" *ngIf="flight">
+      <div>{{ flight.source }} → {{ flight.destination }}</div>
+      <div>Flight: {{ flight.flightNumber }} | Airline: {{ flight.airline }}</div>
+      <div>Total Amount: ₹{{ amount }}</div>
+    </div>
+
+  
+    <div class="card-visual-container">
+      <img *ngIf="selectedMethod==='Credit Card'" src="https://blogassets.airtel.in/wp-content/uploads/2024/10/19058346_6088234.jpg" class="card-image"/>
+      <img *ngIf="selectedMethod==='Debit Card'" src="https://www.visa.co.in/dam/VCOM/regional/ap/india/global-elements/images/in-visa-platinum-card-498x280.png" class="card-image"/>
+    </div>
+
+    
+    <form [formGroup]="cardForm" class="payment-form">
+
+      <input type="text" formControlName="cardNumber" placeholder="Card Number" />
+      <div *ngIf="cardForm.get('cardNumber')?.invalid && cardForm.get('cardNumber')?.touched" class="error">
+        Card number must be 16 digits
+      </div>
+
+      <input type="text" formControlName="cardHolderName" placeholder="Card Holder Name" />
+      <div *ngIf="cardForm.get('cardHolderName')?.invalid && cardForm.get('cardHolderName')?.touched" class="error">
+        Only alphabets and spaces allowed
+      </div>
+
+      <div class="expiry-cvv-row">
+        <select formControlName="expiryMonth">
+          <option value="">MM</option>
+          <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+        </select>
+
+        <select formControlName="expiryYear">
+          <option value="">YYYY</option>
+          <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+        </select>
+
+        <input type="text" formControlName="cvv" placeholder="CVV" maxlength="3"/>
+      </div>
+      <div *ngIf="cardForm.get('cvv')?.invalid && cardForm.get('cvv')?.touched" class="error">
+        CVV must be 3 digits
+      </div> 
+
+      <label>
+        <input type="checkbox" formControlName="saveInfo"/> Save information for faster checkouts
+      </label>
+
+      <button type="button" [disabled]="cardForm.invalid" (click)="onPay()">
+        Pay ₹{{ amount }}
+      </button>
+
+      <p class="merchant-link">
+        or <a href="/booking">Go back to Merchant site</a>
+      </p>
+
+    </form>
+
+  </div>
+</div>
+</div>

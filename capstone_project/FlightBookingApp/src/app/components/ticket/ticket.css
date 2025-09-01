@@ -1,0 +1,51 @@
+.ticket-wrapper { display:flex; justify-content:center; align-items:center; flex-direction:column; padding:20px; background:#f9f9f9; min-height:100vh; }
+.ticket-card { background:white; border-radius:12px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); max-width:800px; width:100%; }
+.ticket-header { text-align:right; margin-bottom:15px; }
+.small-grey { font-size:12px; color:grey; }
+.passenger-name { font-weight:bold; font-size:16px; margin-top:5px; }
+.passenger-name-bold { font-weight:bold; font-size:18px; margin-top:5px; }
+.journey-info { background:#f5f5f5; padding:10px; border-radius:10px; margin-bottom:15px; }
+.route-link { color:blue; text-decoration:underline; }
+.airline-name { color:black; margin-left:5px; }
+.main-ticket { display:flex; justify-content:space-between; margin-bottom:15px; }
+.section { flex:1; padding:5px; text-align:center; }
+.bold { font-weight:bold; color:black; }
+.small-grey { color:grey; font-size:12px; }
+.light-grey { color:#666; font-size:12px; }
+.additional-info { display:flex; justify-content:space-between; padding:10px 0; font-size:12px; }
+.badge { background:#eee; padding:3px 8px; border-radius:5px; margin-right:5px; }
+.traveller-details { display:flex; justify-content:space-between; padding:10px 0; border-top:1px solid #eee; border-bottom:1px solid #eee; font-size:12px; }
+.left, .center, .right { flex:1; }
+.right { text-align:right; }
+.blue-bold { color:blue; font-weight:bold; }
+.ticket-footer { display:flex; justify-content:space-between; padding-top:10px; font-weight:bold; }
+.download-btn { margin-top:15px; padding:10px 20px; border:none; background:blue; color:white; border-radius:5px; cursor:pointer; }
+
+.ticket-header .top-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ticket-header .logo img {
+  width: 170px; 
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.ticket-header .card-holder-name {
+  font-weight: bold;
+  font-size: 25px; 
+  text-align: right; 
+}
+.badge {
+  background: #007bff; 
+  color: white;         
+  padding: 5px 10px;    
+  border-radius: 5px;
+  margin-right: 5px;
+  font-weight: bold;
+  font-size: 14px;     
+}

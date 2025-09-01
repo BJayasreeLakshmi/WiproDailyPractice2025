@@ -1,0 +1,17 @@
+.card {
+  border-radius: 12px;
+}
+
+img {
+  max-width: 60px;
+}
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.container {
+  background-color: #b3bbeb; 
+  padding: 20px;
+  border-radius: 12px;
+}

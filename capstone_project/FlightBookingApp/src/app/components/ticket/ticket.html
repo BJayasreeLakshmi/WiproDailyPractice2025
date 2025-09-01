@@ -1,0 +1,76 @@
+<div class="ticket-wrapper" *ngIf="booking">
+  <div id="ticketCard" class="ticket-card">
+
+    
+    <div class="ticket-header">
+      <div class="top-header">
+        <div class="logo">
+          <img [src]="booking.imageUrl" alt="Airline Logo" />
+
+        </div>
+        <div class="card-holder-name">
+          {{booking.cardHolderName}}
+        </div>
+      </div>
+      <span class="small-grey">Flight Ticket (One way)</span>
+      <div>
+      </div>
+      <div ></div>
+    </div>
+
+    
+    <div class="journey-info">
+      <span class="small-grey">on your journey</span>
+      <div>
+        <a class="route-link" href="#">{{booking.source}} - {{booking.destination}}</a>
+        <span class="airline-name">{{booking.airline}}</span>
+      </div>
+      <div class="passenger-name-bold">{{booking.passengerName}}</div>
+    </div>
+
+    
+    <div class="main-ticket">
+      <div class="section">
+        <div class="route">{{booking.source}} - {{booking.destination}}</div>
+        <div class="small-grey">{{booking.travelDate | date:'EEE, d MMM yyyy'}} | {{booking.tripType}} | {{booking.duration}}</div>
+      </div>
+
+      <div class="section">
+        <div class="bold">{{booking.source}}</div>
+        <div class="small">{{booking.startTime}} hrs</div>
+        <div class="light-grey">{{booking.sourceAirport}}</div>
+      </div>
+
+      <div class="section">
+        <div class="bold">{{booking.destination}}</div>
+        <div class="small">{{booking.endTime}} hrs</div>
+        <div class="light-grey">{{booking.destinationAirport}}</div>
+      </div>
+    </div>
+
+    
+    <div class="additional-info">
+      <span class="badge">Express Value</span>
+      <span class="badge">Economy</span>
+      <span class="badge">Student Fare</span>
+      <div>Baggage: Check-in {{booking.checkInBaggage}} | Cabin {{booking.cabinBaggage}}</div>
+    </div>
+
+    
+    <div class="traveller-details">
+      <div ></div>
+      <div class="center"><strong> Seat:{{booking.seatNumber}}</strong></div>
+      <div class="center"><strong> Meal: {{booking.meal}}</strong></div>
+      <div class="right">E-Ticket No: <span class="blue-bold">{{booking.eticketNumber}}</span></div>
+    </div>
+
+    
+    <div class="ticket-footer">
+      <div>You have paid INR {{booking.amount}}</div>
+      <div>You saved INR 1000</div>
+    </div>
+
+  </div>
+
+  <button class="download-btn" (click)="downloadTicket()">Download Ticket</button>
+</div>

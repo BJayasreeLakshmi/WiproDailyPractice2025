@@ -1,0 +1,78 @@
+<div class="container flight-search-container p-3  rounded shadow-sm">
+
+  
+  <div class="d-flex mb-3 gap-4 justify-content-center">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="triptype" [(ngModel)]="tripType" value="oneway" /> One Way
+    </label>
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="triptype" [(ngModel)]="tripType" value="roundtrip" /> Round Trip
+    </label>
+  </div>
+
+  
+  <div class="d-flex flex-wrap gap-3 align-items-end">
+
+    
+    <div class="position-relative flex-grow-1">
+      <label class="form-label small">From</label>  
+      <input type="text" readonly 
+             class="form-control" 
+             (click)="showSourceDropdown = !showSourceDropdown"
+             [value]="selectedSource?.city || ''" 
+             placeholder="Select source city" />
+      <div *ngIf="showSourceDropdown" class="dropdown-menu show w-100">
+        <div *ngFor="let city of cities" 
+             (click)="selectSource(city)" 
+             class="dropdown-item pointer">
+          <strong>{{city.city}}</strong> 
+          <small>{{city.airport}}</small>
+        </div>
+      </div>
+    </div>
+
+   
+    <div>
+      <button class="btn btn-outline-secondary btn-sm mb-3" (click)="swapLocations()">&#8646;</button>
+    </div>
+
+   
+    <div class="position-relative flex-grow-1">
+      <label class="form-label small">To</label>
+      <input type="text" readonly 
+             class="form-control" 
+             (click)="showDestinationDropdown = !showDestinationDropdown"
+             [value]="selectedDestination?.city || ''"
+             placeholder="Select destination city" />
+      <div *ngIf="showDestinationDropdown" class="dropdown-menu show w-100">
+        <div *ngFor="let city of cities" 
+            (click)="selectDestination(city)" 
+            class="dropdown-item pointer">
+          <strong>{{city.city}}</strong> 
+          <small>{{city.airport}}</small>
+        </div>
+      </div>
+    </div>
+
+    
+    <div>
+      <label class="form-label small">Departure</label>
+      <input type="date" class="form-control" [(ngModel)]="departureDate" [attr.min]="minDate" />
+    </div>
+
+    
+    <div *ngIf="tripType === 'roundtrip'">
+      <label class="form-label small">Return</label>
+      <input type="date" class="form-control" [(ngModel)]="returnDate" [attr.min]="departureDate || minDate" />
+    </div>
+
+    
+    <div>
+      <button class="btn btn-primary mb-3 px-4" (click)="onSearch()">SEARCH</button>
+    </div>
+
+  </div>
+
+  
+  <div *ngIf="errorMessage" class="alert alert-info mt-3">{{ errorMessage }}</div>
+</div>

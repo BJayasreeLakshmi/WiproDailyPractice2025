@@ -1,0 +1,49 @@
+<div class="booking-card" *ngIf="flight">
+  <div class="route-date-row">
+    <div class="route-accent"></div>
+    <div class="route-details">
+      <div class="cities">{{ flight.source }} &rarr; {{ flight.destination }}</div>
+      <div class="journey-summary">
+<span class="date-pill">{{ getFormattedDate(flight.travelDate, flight.startTime) }}</span>
+        <span class="nonstop-pill">{{ flight.stops === 0 ? 'Non Stop' : (flight.stops + ' Stop(s)') }}</span>
+        <span class="duration-pill">{{ flight.duration }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="flight-info-row">
+    <img [src]="flight.imageUrl || 'assets/default-logo.png'" alt="{{flight.airline}} logo" class="airline-logo"/>
+    <span class="airline-name">{{ flight.airline }}</span>
+    <span class="flight-no">{{ flight.flightNumber }}</span>
+    <span class="aircraft-pill">Airbus A320N</span>
+  </div>
+
+  <div class="segment-box">
+    <div class="segment-row">
+      <span class="stop-dot"></span>
+      <span class="segment-time">{{ flight.startTime.substr(0,5) }}</span>
+      <span class="segment-city"><b>{{ flight.source }}</b></span>
+      <span class="segment-airport">{{ flight.sourceAirport }}</span>
+      <span class="segment-duration">{{ flight.duration }}</span>
+    </div>
+    <div class="segment-divider"></div>
+    <div class="segment-row">
+      <span class="stop-dot"></span>
+      <span class="segment-time">{{ flight.endTime.substr(0,5) }}</span>
+      <span class="segment-city"><b>{{ flight.destination }}</b></span>
+      <span class="segment-airport">{{ flight.destinationAirport }}, {{ terminal }}</span>
+    </div>
+  </div> 
+
+  <div class="baggage-row">
+    <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzEGxxfiTrqInf6qzg0vvWCA3-FeHdAchwTg&s" class="baggage-icon"/> Cabin Baggage: {{ baggageCabin }}</span>
+    <span><img src="https://png.pngtree.com/png-vector/20191205/ourmid/pngtree-packed-suitcases-png-image_2026135.jpg" class="baggage-icon"/> Check-In Baggage: {{ baggageCheckin }}</span>
+  </div>
+
+  <div class="action-bar">
+    <button class="pay-btn" (click)="proceedToPay()">PROCEED TO PAY</button>
+    <span class="total-label">Total Amount</span>
+    <span class="total-amount">&nbsp;₹ {{ flight.price }}</span>
+  </div>
+</div>
