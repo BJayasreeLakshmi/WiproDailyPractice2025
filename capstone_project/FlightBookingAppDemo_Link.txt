@@ -1,5 +1,5 @@
 
-COPY PASTE THE BELOW LINK TO SEE THE DEMO OF FLIGHTBOOKINGAPP
+COPY PASTE THE BELOW LINK TO SEE THE DEMO OF FLIGHTBOOKINGAPPLICATION
 
 --------------------------------------------------------------------------------------------------------------
 
