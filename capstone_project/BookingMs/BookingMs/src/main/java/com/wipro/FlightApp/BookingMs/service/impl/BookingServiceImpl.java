@@ -47,15 +47,21 @@ public class BookingServiceImpl implements BookingService {
         return Arrays.asList(flights);
     }
 
+//    @CircuitBreaker(name = "flightService", fallbackMethod = "getFlightByNumberFallback")
+//    public FlightDTO getFlightByNumber(String flightNumber) {
+//        try {
+//            String url = "http://localhost:8081/flights/flight/" + flightNumber; 
+//            return restTemplate.getForObject(url, FlightDTO.class);
+//        } catch (Exception e) {
+//            return null;
+//        }
+ //   }
     @CircuitBreaker(name = "flightService", fallbackMethod = "getFlightByNumberFallback")
     public FlightDTO getFlightByNumber(String flightNumber) {
-        try {
-            String url = "http://localhost:8081/flights/flight/" + flightNumber; // FlightDataMS endpoint
-            return restTemplate.getForObject(url, FlightDTO.class);
-        } catch (Exception e) {
-            return null;
-        }
+        String url = "http://localhost:8081/flights/flight/" + flightNumber;
+        return restTemplate.getForObject(url, FlightDTO.class);
     }
+
     
     public List<FlightDTO> searchFlightsFallback(FlightSearchRequestDTO request, Throwable t) {
         System.out.println("FlightDataMS is down! Returning empty list.");

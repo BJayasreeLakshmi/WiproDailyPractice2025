@@ -1,5 +1,6 @@
 package com.wipro.FlightApp.BookingMs.controller;
 
+import org.springframework.http.MediaType;
 import java.util.HashMap;
 
 import java.util.List;
@@ -26,8 +27,14 @@ import com.wipro.FlightApp.BookingMs.kafka.BookingProducer;
 import com.wipro.FlightApp.BookingMs.repo.BookingRepo;
 import com.wipro.FlightApp.BookingMs.service.BookingService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 
+
+@Tag(name = "Flight Management", description = "APIs for managing flights")
 @RestController
 @RequestMapping("/bookings")
 public class BookingController {
@@ -51,10 +58,27 @@ public class BookingController {
     }
     
     
-    
-   
-    @GetMapping("/flight/{flightNumber}")
-    public ResponseEntity<FlightDTO> getFlightByNumber(@PathVariable String flightNumber) {
+//    @Operation(summary = "Get flight by flight number")
+//    @ApiResponses(value = {
+//        @ApiResponse(responseCode = "200", description = "Flight found"),
+//        @ApiResponse(responseCode = "404", description = "Flight not found")
+//    })
+//    @GetMapping("/flight/{flightNumber}")
+//    public ResponseEntity<FlightDTO> getFlightByNumber(@PathVariable String flightNumber) {
+//        FlightDTO flight = bookingService.getFlightByNumber(flightNumber);
+//        if (flight != null) {
+//            return ResponseEntity.ok(flight);
+//        } else {
+//            return ResponseEntity.notFound().build();
+//        }
+//    }
+    @Operation(summary = "Get flight by flight number")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Flight found"),
+            @ApiResponse(responseCode = "404", description = "Flight not found")
+    })
+    @GetMapping(value = "/flight/{flightNumber}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<FlightDTO> getFlightByNumber(@PathVariable("flightNumber") String flightNumber) {
         FlightDTO flight = bookingService.getFlightByNumber(flightNumber);
         if (flight != null) {
             return ResponseEntity.ok(flight);

@@ -101,9 +101,9 @@ paymentMethods = [
                   this.cardForm?.value.cardHolderName 
                   );
 
-this.router.navigate(['/ticket'], {
-  state: { ticketData }
-});
+                  this.router.navigate(['/ticket'], {
+                  state: { ticketData }
+                  });
                 alert(`Final Payment Status: ${booking.status}`);
               }
             });
